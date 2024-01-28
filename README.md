@@ -1,24 +1,27 @@
-# README
+# Rails app for managing device readings
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+Install ruby version
 
-* Ruby version
+```
+rbenv install
+```
 
-* System dependencies
+Install dependencies
 
-* Configuration
+```
+bundle install
+```
 
-* Database creation
+Run the server:
 
-* Database initialization
+```
+rails server
+```
 
-* How to run the test suite
+Run the tests:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rspec
+```
