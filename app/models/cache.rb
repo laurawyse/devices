@@ -23,6 +23,4 @@ class Cache
       existing_device.add_readings(readings)
     end
   end
-
-  # todo - add unit tests for this
 end
