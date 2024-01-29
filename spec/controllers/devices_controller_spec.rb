@@ -83,7 +83,6 @@ describe DevicesController do
           post :create_readings, params: params
           post :create_readings, params: repeat_reading_params
           expect(response).to have_http_status(:success)
-          puts Cache.instance.find!(device_id).readings.to_s
           expect(Cache.instance.find!(device_id).readings.length).to eq(2)
         end
       end

@@ -2,13 +2,13 @@
 
 ## Getting Started
 
-Install ruby version
+Install ruby version using any version manager, for example with rbenv:
 
 ```
 rbenv install
 ```
 
-Install dependencies
+Install dependencies:
 
 ```
 bundle install
@@ -23,7 +23,7 @@ rails server
 Run the tests:
 
 ```
-rspec
+bundle exec rspec
 ```
 
 ## API docs
@@ -104,12 +104,13 @@ Tests: Unit tests can be found in the spec folder and run with rspec.
 
 Given more time I would take the following actions:
 * Add validations to params on both models and controllers
-* Right now I'm evaluating the latest reading and cumulative count when asked for it. If these operations were read heavy and the list of readings was quite long, this could be slow. Instead I could calculate those on write and store them for a quick evaluation on read.
+* Right now I'm evaluating the latest reading and cumulative count when asked for it. If these operations were read heavy and the list of readings was quite long, this could be slow. Instead I could calculate those on write and store them for a quick evaluation on read. These could also be done in an async job when readings are inserted if the readings list was extremely long and we were okay with a delay in them being updated.
 * The logic to add readings to an existing device is not ideal. It stores readings in a list and then looks to see if there is already a reading with a matching timestamp before adding a new one. If we are writing a lot, this would be slow and it may be better to use a different data structure.
 * Use serializers to define API response schemas. Right now these are pretty simple but if they get more complex, this would help make that interface more clearly defined.
 * Improve tests
   * Some tests are dependent on others or dependent on multiple functions/apis. I would separate these to make them self contained
   * Expand to cover more edge cases
+* Clean up dependencies and extra files. I used `rails new` to generate this app and while I did clean up some of the unneeded files and dependencies, there are still some unused things included here.
 
 In a live environment I would also expect to need to add:
 * authentication (right now the API doesn't require any)
