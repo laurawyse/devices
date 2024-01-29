@@ -114,6 +114,5 @@ Given more time I would take the following actions:
 In a live environment I would also expect to need to add:
 * authentication (right now the API doesn't require any)
 * an actual database to store devices and readings
-  * using a relational database would give the ability to use contraints there to make
 
 Many of these things are also noted in the actual code using `TODO` comments. More details may be found there!
